@@ -18,6 +18,11 @@ public class Book {
 
 	public Book() {
 		super();
+		this.title = null;
+		this.author = null;
+		this.year = 0;
+		this.isbn = null;
+		this.price = 0;
 		// TODO Auto-generated constructor stub
 	}
 
