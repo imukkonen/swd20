@@ -1,11 +1,20 @@
 package hh.swd20.Bookstore.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
-	 String title;
-	 String author; 
-	 int year; 
-	 String isbn;
-	 double price;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) 
+	 private long id; 
+	 private String title;
+	 private String author; 
+	 private int year; 
+	 private String isbn;
+	 private double price;
 	
 	 public Book(String title, String author, int year, String isbn, double price) {
 		super();
@@ -15,7 +24,7 @@ public class Book {
 		this.isbn = isbn;
 		this.price = price;
 	}
-
+	
 	public Book() {
 		super();
 		this.title = null;
@@ -24,6 +33,14 @@ public class Book {
 		this.isbn = null;
 		this.price = 0;
 		// TODO Auto-generated constructor stub
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
