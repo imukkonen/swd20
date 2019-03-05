@@ -27,11 +27,6 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepository;
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String getNewBook(Model model) {
-		
-		return "index"; //index.html
-	}
 	
 	//kaikki kirjat
 	@RequestMapping(value="/booklist")
