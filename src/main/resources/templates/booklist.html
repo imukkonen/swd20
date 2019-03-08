@@ -28,8 +28,8 @@
 		    <th>ISBN</th>
 		    <th>Hinta</th>
 		    <th>Ryhmä</th>
-		    <th sec:authorize="hasRole('ADMIN')">Poista</th>
-		    <th sec:authorize="hasRole('ADMIN')">Muokata</th>
+		    <th sec:authorize="hasAuthority('ADMIN')">Poista</th>
+		    <th sec:authorize="hasAuthority('ADMIN')">Muokata</th>
 		</tr>  
     	<tr th:each = "book : ${books}">
     		<td th:text="${book.title}"></td>
@@ -38,13 +38,13 @@
     		<td th:text="${book.isbn}"></td>
     		<td th:text="${book.price}"></td>
     		<td th:text="${book.category.name}"></td>
- 			<td sec:authorize="hasRole('ADMIN')"><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Poista</button></td>   
- 			<td sec:authorize="hasRole('ADMIN')"><a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-success">Muokkaa</button></td>  
+ 			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Poista</button></td>   
+ 			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-success">Muokkaa</button></td>  
  			 		
     	</tr>
      </table>
      <br />
-	<p sec:authorize="hasRole('ADMIN')"><button class="btn btn-success" OnClick="location.href='/add'">Lisää kirja</button>	
+	<p sec:authorize="hasAuthority('ADMIN')"><button class="btn btn-success" OnClick="location.href='/add'">Lisää kirja</button>	
 	</div>	
 </body>
 </html>
