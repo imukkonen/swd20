@@ -27,6 +27,11 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepository;
 	
+	//login
+	@RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
 	
 	//kaikki kirjat
 	@RequestMapping(value="/booklist")
